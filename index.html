@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FillTwo — two-bar live fill desk</title>
+  <meta name="description" content="Two live-instrument bars that break a looping pocket so the next section can land." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<div id="tap-gate" class="gate">
+  <button id="tap-btn">Tap to start audio</button>
+  <p>iOS silent switch mutes Web Audio.</p>
+</div>
+<main>
+  <p class="eyebrow">WorkinWithAI · live chairs</p>
+  <h1>FillTwo</h1>
+  <p class="lead">Two-bar live fill desk. Loops reprint forever. Session players write two bars of fill — kit roll, bass walk, nylon answer, brass stab — so the next section has a door. Live piano, upright, nylon, kit, trumpet, violin. Not a pre-hook climb. Not a last-line tag. Not a key change.</p>
+  <p class="status" id="status">Seating chairs…</p>
+  <div class="controls">
+    <label>BPM <input type="number" id="bpm" min="60" max="180" value="92" /></label>
+    <label>Key <select id="key">
+      <option value="0">C</option><option value="-3" selected>A minor</option><option value="-5">G</option>
+      <option value="2">D</option><option value="-2">Bb</option>
+    </select></label>
+    <label>Bars <select id="bars"><option value="8">8</option><option value="4">4</option></select></label>
+  </div>
+  <p class="eyebrow">Groove</p>
+  <div class="row" id="grooves"></div>
+  <p class="eyebrow">Fill</p>
+  <div class="row" id="recipes"></div>
+  <p class="eyebrow">Form · pocket 1–6 · fill 7–8 · next section lands</p>
+  <div class="bars" id="bars-ui"></div>
+  <div id="playhead" class="playhead"></div>
+  <h2>Punch list</h2>
+  <pre id="punch"></pre>
+  <p id="export-status"></p>
+</main>
+<div class="dock">
+  <button id="playA">A · Pocket loop</button>
+  <button id="playB">B · Pocket + fill</button>
+  <button id="play2">2 · Fill only</button>
+  <button class="ghost" id="stop">Stop</button>
+  <button class="ghost" id="copy">Copy punch</button>
+  <button class="ghost" id="export-wav">Export WAV</button>
+  <button class="ghost" id="export-wav-tail">WAV + tail</button>
+  <button class="ghost" id="export-mid">Export MIDI</button>
+</div>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
